@@ -12,7 +12,7 @@ const MyReqest = () => {
     const [user] = useAuthState(auth)
     useEffect(() => {
         const email = user?.email
-        const url = `https://blood-donation-ai.onrender.com/myRequest?email=${email}`;
+        const url = `https://blood.rebzigo.com/myRequest?email=${email}`;
         fetch(url, {
             method: "GET",
         })
@@ -26,7 +26,7 @@ const MyReqest = () => {
     const handleDeleteMessage = (id) => {
         const proced = window.confirm("Are Your Sure Delete This Message");
         if (proced) {
-            const url = `https://blood-donation-ai.onrender.com/bloodReq/${id}`;
+            const url = `https://blood.rebzigo.com/bloodReq/${id}`;
             fetch(url, {
                 method: "DELETE",
             })

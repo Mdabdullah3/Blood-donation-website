@@ -23,7 +23,7 @@ const Donars = () => {
 
     useEffect(() => {
         setLoading(true)
-        const url = "https://blood-donation-ai.onrender.com/user";
+        const url = "https://blood.rebzigo.com/user";
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -95,7 +95,7 @@ const Donars = () => {
             <h1 className='text-2xl font-semibold text-center mt-60 text-primary'>Our Blood Donars</h1>
             <p className='text-lg text-center text-gray-700'>Find a Blood Donars Contact His Phone Numbers</p>
             <div className='mx-auto mt-20 grid w-10/12 grid-cols-1 md:grid-cols-3 gap-10 mb-20'>
-            <h1 className="md:text-[100px] text-4xl absolute left-1/3 bottom-8 -z-10 text-[#F7F7F7] text-center font-mono font-bold">Blood Donars</h1>
+                <h1 className="md:text-[100px] text-4xl absolute left-1/3 bottom-8 -z-10 text-[#F7F7F7] text-center font-mono font-bold">Blood Donars</h1>
 
                 {
                     reverseItem.map(item =>

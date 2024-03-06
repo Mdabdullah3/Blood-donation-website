@@ -10,7 +10,7 @@ const Donars = () => {
     const reverseItem = [...donars].reverse();
     useEffect(() => {
         setLoading(true)
-        const url = 'https://blood-donation-ai.onrender.com/user';
+        const url = 'https://blood.rebzigo.com/user';
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -32,11 +32,11 @@ const Donars = () => {
                 <h1 className="md:text-[100px] text-4xl absolute left-1/4 top-32 -z-10 text-[#F7F7F7] text-center font-mono font-bold">Latest Donars</h1>
             </div>
             <div>
-            {loading && (
-                <div className="mt-10">
-                    <Loading></Loading>
-                </div>
-            )}
+                {loading && (
+                    <div className="mt-10">
+                        <Loading></Loading>
+                    </div>
+                )}
                 <div class="mx-auto mt-24 grid w-10/12 grid-cols-1 md:grid-cols-3 gap-10 ">
                     {reverseItem.slice(0, 6).map(item =>
                         <DonarCard item={item}></DonarCard>
