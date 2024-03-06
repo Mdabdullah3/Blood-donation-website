@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import DonarCard from '../Donars/DonarCard';
-import { Slide, Fade } from 'react-awesome-reveal';
+import { Slide } from 'react-awesome-reveal';
 import Loading from '../Shared/Loading/Loading';
 
 const Donars = () => {
     const [loading, setLoading] = useState(false)
     const [donars, setDonars] = useState([])
-    const reverseItem = [...donars].reverse();
     useEffect(() => {
         setLoading(true)
         const url = 'https://blood.rebzigo.com/user';
@@ -38,7 +37,7 @@ const Donars = () => {
                     </div>
                 )}
                 <div class="mx-auto mt-24 grid w-10/12 grid-cols-1 md:grid-cols-3 gap-10 ">
-                    {reverseItem.slice(0, 6).map(item =>
+                    {donars?.slice(0, 6).map(item =>
                         <DonarCard item={item}></DonarCard>
                     )}
                 </div>
